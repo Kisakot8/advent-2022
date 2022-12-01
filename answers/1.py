@@ -8,10 +8,10 @@ def main():
 def find_top_3(lst:list[int]) -> int:
     sums = 0
     for i in range(3):
-        x = find_largest(lst)
-        print(x)
-        sums += x[0]
-        lst.pop(x[1])
+        current_largest = find_largest(lst)
+        print(current_largest)
+        sums += current_largest[0]
+        lst.pop(current_largest[1])
     return sums
 
 def find_largest(lst:list[int]) -> int:
