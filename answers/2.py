@@ -1,5 +1,5 @@
 def main():
-    with open('testing text.txt','r',encoding='utf-8') as file:
+    with open('input 2.txt','r',encoding='utf-8') as file:
         score = 0
         score2 = 0
         for line in file:
