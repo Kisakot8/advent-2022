@@ -1,7 +1,7 @@
 import string
 
 def main():
-    with open('testing text.txt','r',encoding='utf-8') as f:
+    with open('input 3.txt','r',encoding='utf-8') as f:
         repeated = []
         for line in f:
             line = line.strip()
