@@ -1,22 +1,34 @@
 from copy import deepcopy
 
 def main():
-    '''
-    Now. I could either spend hours trying to code a way
-    to read the stacks, OR I could just hardcode it and
-    save myself time. I'll choose the second option.
-    '''
+    data = []
+    with open('testFile.txt','r',encoding='utf-8') as f:
+        for line in f:
+            if '[' not in line:
+                break
+            data.append(line)
 
-    stacks = [
-    ['N','W','B'],
-    ['B','M','D','T','P','S','Z','L'],
-    ['R','W','Z','H','Q'],
-    ['R','Z','J','V','D','W'],
-    ['B','M','H','S'],
-    ['B','P','V','H','J','N','G','L'],
-    ['S','L','D','H','F','Z','Q','J'],
-    ['B','Q','G','J','F','S','W'],
-    ['J','D','C','S','M','W','Z']]
+    stacks_2d = []
+    for line in data:
+        if '[' not in line:
+            break
+        line = '  ' + line.strip('\n')
+        stack = []
+        for j in range(len(line)):
+            if (j+1)%4 == 0 and j != 0:
+                stack.append(line[j])
+        stacks_2d.append(stack)
+
+    stacks = []
+    for i in range(len(stacks_2d[0])):
+        stack = []
+        for j in range(len(stacks_2d)):
+            if stacks_2d[j][i] == ' ':
+                continue
+            stack.append(stacks_2d[j][i])
+        stacks.append(stack)
+
+    [print(stack) for stack in stacks]
 
     stacks_2 = deepcopy(stacks)
 
