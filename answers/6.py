@@ -1,5 +1,5 @@
 def main():
-    data = open('1 input.txt','r',encoding='utf-8').readline()
+    data = open('inout 6.txt','r',encoding='utf-8').readline()
 
     for i in range(4,len(data)):
         marker = data[i-4:i]
