@@ -2,7 +2,7 @@ from copy import deepcopy
 
 def main():
     data = []
-    with open('testFile.txt','r',encoding='utf-8') as f:
+    with open('input 5.txt','r',encoding='utf-8') as f:
         for line in f:
             if '[' not in line:
                 break
